@@ -1,3 +1,38 @@
+# byL&L — Custom Couple Paintings
+
+A landing page for **byL&L**, a hand-painting business by Lauriana that transforms couple photos into unique, hand-painted artworks.
+
+## About
+
+byL&L creates personalized paintings from your favourite couple photos. Whether it's for an anniversary, a wedding gift, or a way to celebrate love — each piece is hand-painted with care, capturing the emotion that makes your story special.
+
+## Sections
+
+- **Hero** — Full-screen intro with call-to-action
+- **About** — Meet the artist behind byL&L
+- **Gallery** — Portfolio of hand-painted couple portraits
+- **How It Works** — 3-step ordering process
+- **Pricing** — Small (200 MDL), Medium (300 MDL), Large (400 MDL)
+- **Contact** — Email CTA to order a painting
+- **Footer** — Navigation links
+
+## Tech Stack
+
+- Vanilla HTML & CSS (no frameworks)
+- Google Fonts (Playfair Display + Lato)
+- Responsive design (mobile-friendly)
+
+## Live Demo
+
+<!-- Add your deployment link here -->
+[Live Demo](https://mcittkmims.github.io/tum-web-lab2/)
+
+## Screenshots
+
+<!-- Add screenshots here after deployment -->
+
+---
+
 # Lab 2 - Landing page
 
 Create a web page for your/friends/relatives business (example: car-rent, cookies-shop, crypto-scam)

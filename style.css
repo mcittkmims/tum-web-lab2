@@ -282,6 +282,70 @@ img {
   display: block;
 }
 
+/* ===== How It Works ===== */
+.how-it-works {
+  padding: 100px 24px;
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+.how-it-works h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 12px;
+}
+
+.steps-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.step {
+  flex: 1;
+  max-width: 280px;
+  padding: 36px 28px;
+  background-color: var(--color-light-bg);
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-4px);
+}
+
+.step-number {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-deep-rose);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.step h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 12px;
+}
+
+.step p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--color-dark);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .navbar {
@@ -325,5 +389,15 @@ img {
 
   .gallery-item img {
     height: 200px;
+  }
+
+  .steps-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .step {
+    max-width: 100%;
   }
 }

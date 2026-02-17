@@ -1,1 +1,207 @@
-/* add your CSS here */
+/* ===== Variables ===== */
+:root {
+  --color-blush: #f2d7d9;
+  --color-lavender: #d5c6e0;
+  --color-cream: #faf3e0;
+  --color-rose: #c9929d;
+  --color-deep-rose: #a3586d;
+  --color-dark: #3d2c2e;
+  --color-white: #ffffff;
+  --color-light-bg: #fdf8f4;
+
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Lato", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 14px 36px;
+  border-radius: 40px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-deep-rose);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-rose);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(163, 88, 109, 0.35);
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 48px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+}
+
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-deep-rose);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--color-dark);
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-deep-rose);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-deep-rose);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-cta {
+  padding: 10px 24px;
+  border-radius: 40px;
+  background-color: var(--color-deep-rose);
+  color: var(--color-white);
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.nav-cta:hover {
+  background-color: var(--color-rose);
+  transform: translateY(-1px);
+}
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url("hero-bg.jpg") center / cover no-repeat;
+  padding: 120px 24px 80px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(250, 243, 224, 0.85) 0%,
+    rgba(213, 198, 224, 0.7) 50%,
+    rgba(242, 215, 217, 0.8) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-dark);
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--color-dark);
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 14px 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}

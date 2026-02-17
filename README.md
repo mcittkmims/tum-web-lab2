@@ -12,7 +12,7 @@ byL&L creates personalized paintings from your favourite couple photos. Whether 
 - **About** — Meet the artist behind byL&L
 - **Gallery** — Portfolio of hand-painted couple portraits
 - **How It Works** — 3-step ordering process
-- **Pricing** — Small (200 MDL), Medium (300 MDL), Large (400 MDL)
+- **Pricing** — Small/A5 (200 MDL), Medium/A4 (300 MDL), Large/A3 (400 MDL)
 - **Contact** — Email CTA to order a painting
 - **Footer** — Navigation links
 

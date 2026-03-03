@@ -630,61 +630,6 @@ img {
   padding: 14px 44px !important;
 }
 
-/* ===== Mobile CTA Banner (mobile-only) ===== */
-.mobile-cta-banner {
-  background: linear-gradient(135deg, var(--color-blush) 0%, var(--color-lavender) 100%);
-  padding: 28px 20px;
-  border-top: 3px solid var(--color-deep-rose);
-  border-bottom: 3px solid var(--color-deep-rose);
-}
-
-.mobile-cta-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  text-align: center;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.mobile-cta-icon {
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.mobile-cta-text h3 {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-dark);
-  margin-bottom: 8px;
-}
-
-.mobile-cta-text p {
-  font-size: 0.95rem;
-  font-weight: 300;
-  color: var(--color-dark);
-  line-height: 1.6;
-}
-
-.mobile-cta-btn {
-  display: inline-block;
-  background-color: var(--color-deep-rose);
-  color: var(--color-white);
-  padding: 14px 36px;
-  border-radius: 40px;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 700;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.mobile-cta-btn:hover {
-  background-color: var(--color-rose);
-  transform: translateY(-2px);
-}
-
 /* ===== Mascot ===== */
 @keyframes mascot-float {
   0%, 100% { transform: translateY(0px) rotate(-3deg); }

@@ -87,7 +87,7 @@ img {
   padding: 18px 48px;
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(10px);
-  z-index: 1000;
+  z-index: 1100;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
 }
 
@@ -727,7 +727,7 @@ img {
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .navbar {
     padding: 14px 20px;
   }

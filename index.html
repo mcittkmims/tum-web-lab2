@@ -352,6 +352,17 @@
     setTimeout(() => {
       document.getElementById("mascot").classList.add("mascot--visible");
     }, 2500);
+
+    const mascotEl = document.getElementById("mascot");
+    mascotEl.querySelector(".mascot-svg").addEventListener("click", (e) => {
+      e.stopPropagation();
+      mascotEl.classList.toggle("mascot--open");
+    });
+    document.addEventListener("click", (e) => {
+      if (!mascotEl.contains(e.target)) {
+        mascotEl.classList.remove("mascot--open");
+      }
+    });
   </script>
   </body>
 </html>

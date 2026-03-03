@@ -12,6 +12,19 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              rose: { 50: '#fdf2f4', 100: '#fce7ea', 300: '#f0a3b0', 600: '#c9929d', 700: '#a3586d', 800: '#7a3a4f' }
+            }
+          }
+        },
+        corePlugins: { preflight: false }
+      }
+    </script>
   </head>
   <body>
     <!-- Navigation -->
@@ -26,7 +39,25 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <a href="mailto:lauriana.vremere@gmail.com?subject=Doresc să comand un tablou" class="nav-cta">Comandă Acum</a>
+      <button class="hamburger" id="hamburger-btn" aria-label="Deschide meniul">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav" id="mobile-nav">
+      <ul class="mobile-nav-links">
+        <li><a href="#about">Despre</a></li>
+        <li><a href="#gallery">Galerie</a></li>
+        <li><a href="#how-it-works">Cum Funcționează</a></li>
+        <li><a href="#pricing">Prețuri</a></li>
+        <li><a href="#reviews">Recenzii</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="mailto:lauriana.vremere@gmail.com?subject=Doresc să comand un tablou" class="btn btn-primary mobile-nav-cta">Comandă Acum</a>
+    </div>
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
@@ -45,6 +76,23 @@
         </a>
       </div>
     </section>
+
+    <!-- Mobile-only Quick Order Banner (visible only on mobile) -->
+    <div class="md:hidden mobile-cta-banner">
+      <div class="mobile-cta-inner">
+        <div class="mobile-cta-icon">🎨</div>
+        <div class="mobile-cta-text">
+          <h3>Comandă Direct de pe Telefon!</h3>
+          <p>Trimite-ne fotografia ta preferată și transformăm povestea voastră în artă</p>
+        </div>
+        <a
+          href="mailto:lauriana.vremere@gmail.com?subject=Doresc să comand un tablou"
+          class="mobile-cta-btn"
+        >
+          Scrie-ne Acum →
+        </a>
+      </div>
+    </div>
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -244,6 +292,46 @@
       </div>
     </section>
 
+    <!-- Mascot: Penny the Paintbrush -->
+    <div class="mascot" id="mascot">
+      <div class="mascot-bubble">
+        <p>Bună! Sunt Penny 🎨</p>
+        <p>Transformăm povestea voastră de dragoste într-un tablou unic pictat manual!</p>
+        <a href="#pricing" class="mascot-cta">Vezi Prețuri</a>
+      </div>
+      <svg class="mascot-svg" width="70" height="180" viewBox="0 0 70 180" xmlns="http://www.w3.org/2000/svg" aria-label="Penny mascotul pensonului">
+        <!-- Handle -->
+        <rect x="27" y="76" width="16" height="94" rx="4" fill="#A0714F"/>
+        <rect x="29" y="76" width="4" height="94" rx="2" fill="#C09070" opacity="0.45"/>
+        <!-- End cap -->
+        <rect x="27" y="162" width="16" height="8" rx="4" fill="#8B5E3C"/>
+        <!-- Ferrule -->
+        <rect x="23" y="61" width="24" height="18" rx="3" fill="#B0B0B0"/>
+        <rect x="23" y="61" width="24" height="5" rx="2" fill="#D4D4D4"/>
+        <line x1="23" y1="68" x2="47" y2="68" stroke="#999" stroke-width="1"/>
+        <!-- Bristles body -->
+        <path d="M24 62 Q21 38 35 10 Q49 38 46 62 Z" fill="#A3586D"/>
+        <path d="M26 62 Q23 40 35 16 Q35 40 35 62 Z" fill="#B8728A" opacity="0.45"/>
+        <!-- Tip highlight -->
+        <path d="M33 10 Q35 6 37 10" stroke="#D4A0B0" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Eyes -->
+        <circle cx="29" cy="38" r="4.5" fill="white"/>
+        <circle cx="41" cy="38" r="4.5" fill="white"/>
+        <circle cx="30.2" cy="39" r="2.8" fill="#3d2c2e"/>
+        <circle cx="42.2" cy="39" r="2.8" fill="#3d2c2e"/>
+        <circle cx="31" cy="37.5" r="1" fill="white"/>
+        <circle cx="43" cy="37.5" r="1" fill="white"/>
+        <!-- Cheeks -->
+        <ellipse cx="25" cy="45" rx="4" ry="3" fill="#F2D7D9" opacity="0.8"/>
+        <ellipse cx="45" cy="45" rx="4" ry="3" fill="#F2D7D9" opacity="0.8"/>
+        <!-- Smile -->
+        <path d="M28 48 Q35 55 42 48" stroke="#3d2c2e" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <!-- Paint drip -->
+        <path d="M23 62 Q18 72 21 80" stroke="#A3586D" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <circle cx="21" cy="82" r="4" fill="#A3586D"/>
+      </svg>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-content">
@@ -259,5 +347,29 @@
         <p class="footer-copy">&copy; 2026 byL&amp;L. Toate drepturile rezervate.</p>
       </div>
     </footer>
+  <script>
+    // Hamburger menu toggle
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    hamburgerBtn.addEventListener('click', () => {
+      hamburgerBtn.classList.toggle('active');
+      mobileNav.classList.toggle('open');
+      document.body.classList.toggle('no-scroll');
+    });
+
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburgerBtn.classList.remove('active');
+        mobileNav.classList.remove('open');
+        document.body.classList.remove('no-scroll');
+      });
+    });
+
+    // Mascot appears after delay
+    setTimeout(() => {
+      document.getElementById('mascot').classList.add('mascot--visible');
+    }, 2500);
+  </script>
   </body>
 </html>

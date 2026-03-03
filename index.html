@@ -335,6 +335,12 @@
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mobileNav = document.getElementById('mobile-nav');
 
+    function closeMobileMenu() {
+      hamburgerBtn.classList.remove('active');
+      mobileNav.classList.remove('open');
+      document.body.classList.remove('no-scroll');
+    }
+
     hamburgerBtn.addEventListener('click', () => {
       hamburgerBtn.classList.toggle('active');
       mobileNav.classList.toggle('open');
@@ -342,11 +348,12 @@
     });
 
     mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburgerBtn.classList.remove('active');
-        mobileNav.classList.remove('open');
-        document.body.classList.remove('no-scroll');
-      });
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close menu when resizing back to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1024) closeMobileMenu();
     });
 
     // Mascot appears after delay

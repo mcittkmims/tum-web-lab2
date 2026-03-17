@@ -18,9 +18,37 @@ byL&L creates personalized paintings from your favourite couple photos. Whether 
 
 ## Tech Stack
 
-- Vanilla HTML & CSS (no frameworks)
-- Google Fonts (Playfair Display + Lato)
-- Responsive design (mobile-friendly)
+- [Astro](https://astro.build) — Static Site Generator
+- [Tailwind CSS v4](https://tailwindcss.com) — Utility-first CSS
+- [Decap CMS](https://decapcms.org) — Git-based CMS
+- Google Fonts (Cormorant Garamond + Open Sans)
+- Deployed on GitHub Pages via GitHub Actions
+
+## Development
+
+```bash
+# Install dependencies
+bun install
+
+# Start dev server
+bun run dev
+
+# Build for production
+bun run build
+
+# Start local CMS server (for content editing without GitHub auth)
+bunx decap-server
+# Then open http://localhost:4321/tum-web-lab2/admin/
+```
+
+## Content Management
+
+All site content is editable via the CMS:
+- `src/content/site/settings.yaml` — hero, about, contact, mascot text
+- `src/content/gallery/` — gallery images
+- `src/content/steps/` — how-it-works steps
+- `src/content/pricing/` — pricing tiers
+- `src/content/reviews/` — customer reviews
 
 ## Live Demo
 

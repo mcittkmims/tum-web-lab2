@@ -1,0 +1,13 @@
+name: "Mediu"
+price: 300
+currency: "MDL"
+features:
+  - "Pânză A4"
+  - "1 portret de cuplu"
+  - "Pictat manual cu acrilice"
+  - "Gata în 10–14 zile"
+ctaText: "Comandă mediu"
+ctaEmailSubject: "Comandă: Tablou Mediu"
+popular: true
+popularLabel: "Cel Mai Popular"
+order: 2

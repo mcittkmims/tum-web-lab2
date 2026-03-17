@@ -1,0 +1,12 @@
+name: "Mic"
+price: 200
+currency: "MDL"
+features:
+  - "Pânză A5"
+  - "1 portret de cuplu"
+  - "Pictat manual cu acrilice"
+  - "Gata în 7–10 zile"
+ctaText: "Comandă mic"
+ctaEmailSubject: "Comandă: Tablou Mic"
+popular: false
+order: 1

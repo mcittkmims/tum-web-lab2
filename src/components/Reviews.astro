@@ -1,0 +1,32 @@
+---
+interface Review {
+  author: string;
+  text: string;
+  rating: number;
+  order: number;
+}
+
+interface Props {
+  title: string;
+  subtitle: string;
+  reviews: Review[];
+}
+
+const { title, subtitle, reviews } = Astro.props;
+---
+
+<section id="reviews" class="py-[60px] lg:py-[100px] px-5 lg:px-10 bg-cream text-center">
+  <h2 class="font-heading text-[1.8rem] lg:text-[2.2rem] text-brand-dark mb-3">{title}</h2>
+  <p class="text-[1.1rem] font-light text-brand-rose mb-12">{subtitle}</p>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 max-w-[1100px] mx-auto">
+    {reviews.map((review) => (
+      <div class="bg-white border border-blush rounded-2xl p-8 flex flex-col gap-4 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(163,88,109,0.12)]">
+        <p class="text-[0.97rem] leading-[1.7] text-brand-dark flex-1 italic">"{review.text}"</p>
+        <div class="text-deep-rose text-[1.1rem] tracking-[2px]">
+          {"★".repeat(review.rating)}
+        </div>
+        <p class="text-[0.88rem] font-bold text-brand-rose tracking-wide">— {review.author}</p>
+      </div>
+    ))}
+  </div>
+</section>

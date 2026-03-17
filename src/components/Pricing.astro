@@ -1,0 +1,56 @@
+---
+interface PricingTier {
+  name: string;
+  price: number;
+  currency: string;
+  features: string[];
+  ctaText: string;
+  ctaEmailSubject: string;
+  popular: boolean;
+  popularLabel?: string;
+  order: number;
+}
+
+interface Props {
+  title: string;
+  subtitle: string;
+  tiers: PricingTier[];
+  email: string;
+}
+
+const { title, subtitle, tiers, email } = Astro.props;
+---
+
+<section id="pricing" class="py-[60px] lg:py-[100px] px-5 lg:px-6 bg-light-bg text-center">
+  <h2 class="font-heading text-[2rem] lg:text-[2.4rem] font-bold text-brand-dark mb-3">{title}</h2>
+  <p class="text-[1.1rem] font-light text-brand-rose mb-12">{subtitle}</p>
+  <div class="max-w-[1000px] mx-auto flex flex-col lg:flex-row gap-5 lg:gap-7 justify-center items-stretch">
+    {tiers.map((tier) => {
+      const href = `mailto:${email}?subject=${encodeURIComponent(tier.ctaEmailSubject)}`;
+      return (
+        <div class={`flex-1 lg:max-w-[300px] bg-white rounded-2xl px-7 py-10 shadow-[0_4px_20px_rgba(0,0,0,0.06)] flex flex-col items-center relative transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(163,88,109,0.15)] ${tier.popular ? 'border-2 border-deep-rose lg:scale-105' : ''}`}>
+          {tier.popular && tier.popularLabel && (
+            <div class="absolute -top-[14px] bg-deep-rose text-white px-5 py-1.5 rounded-full text-[0.8rem] font-bold tracking-wide">{tier.popularLabel}</div>
+          )}
+          <h3 class="font-heading text-[1.4rem] font-semibold text-brand-dark mb-2">{tier.name}</h3>
+          <div class="font-heading text-[2.8rem] font-bold text-deep-rose mb-6">
+            {tier.price} <span class="text-base font-normal text-brand-rose">{tier.currency}</span>
+          </div>
+          <ul class="list-none mb-7 flex-1 w-full">
+            {tier.features.map((feature, i) => (
+              <li class={`text-[0.95rem] font-light text-brand-dark py-2 ${i < tier.features.length - 1 ? 'border-b border-black/[0.06]' : ''}`}>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <a
+            href={href}
+            class={`inline-block px-9 py-[14px] rounded-full font-bold tracking-wide transition-all duration-300 hover:-translate-y-0.5 ${tier.popular ? 'bg-deep-rose text-white hover:bg-brand-rose hover:shadow-[0_6px_20px_rgba(163,88,109,0.35)]' : 'border-2 border-deep-rose text-deep-rose hover:bg-deep-rose hover:text-white'}`}
+          >
+            {tier.ctaText}
+          </a>
+        </div>
+      );
+    })}
+  </div>
+</section>

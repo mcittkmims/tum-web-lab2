@@ -2,8 +2,7 @@ backend:
   name: github
   repo: mcittkmims/tum-web-lab2
   branch: master
-  auth_type: pkce
-  app_id: Ov23lixxhLCwsOc7MyZl
+  base_url: https://sveltia-cms-auth.mcittkmims.workers.dev
 
 local_backend: true
 

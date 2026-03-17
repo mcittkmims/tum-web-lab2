@@ -1,0 +1,100 @@
+backend:
+  name: github
+  repo: mcittkmims/tum-web-lab2
+  branch: master
+
+local_backend: true
+
+media_folder: "public/images"
+public_folder: "images"
+
+collections:
+  - name: "site"
+    label: "Setări site"
+    files:
+      - name: "settings"
+        label: "Setări generale"
+        file: "src/content/site/settings.yaml"
+        fields:
+          - { label: "Numele afacerii", name: "businessName", widget: "string" }
+          - { label: "Email contact", name: "contactEmail", widget: "string" }
+          - { label: "Hero titlu", name: "heroHeadline", widget: "string" }
+          - { label: "Hero subtitlu", name: "heroSubheadline", widget: "text" }
+          - { label: "Hero buton", name: "heroCta", widget: "string" }
+          - { label: "Despre titlu", name: "aboutTitle", widget: "string" }
+          - label: "Despre paragrafe"
+            name: "aboutParagraphs"
+            widget: "list"
+            field: { label: "Paragraf", name: "paragraph", widget: "text" }
+          - { label: "Despre imagine", name: "aboutImage", widget: "image" }
+          - { label: "Despre imagine alt", name: "aboutImageAlt", widget: "string" }
+          - { label: "Galerie titlu", name: "galleryTitle", widget: "string" }
+          - { label: "Galerie subtitlu", name: "gallerySubtitle", widget: "string" }
+          - { label: "Cum funcționează titlu", name: "howItWorksTitle", widget: "string" }
+          - { label: "Cum funcționează subtitlu", name: "howItWorksSubtitle", widget: "string" }
+          - { label: "Prețuri titlu", name: "pricingTitle", widget: "string" }
+          - { label: "Prețuri subtitlu", name: "pricingSubtitle", widget: "string" }
+          - { label: "Recenzii titlu", name: "reviewsTitle", widget: "string" }
+          - { label: "Recenzii subtitlu", name: "reviewsSubtitle", widget: "string" }
+          - { label: "Contact titlu", name: "contactTitle", widget: "string" }
+          - { label: "Contact text", name: "contactText", widget: "text" }
+          - { label: "Contact buton", name: "contactCta", widget: "string" }
+          - { label: "Footer copyright", name: "footerCopyright", widget: "string" }
+          - { label: "Mascotă salut", name: "mascotGreeting", widget: "string" }
+          - { label: "Mascotă text", name: "mascotText", widget: "text" }
+          - { label: "Mascotă buton", name: "mascotCta", widget: "string" }
+
+  - name: "gallery"
+    label: "Galerie"
+    folder: "src/content/gallery"
+    format: "yaml"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Imagine", name: "image", widget: "image" }
+      - { label: "Text alternativ", name: "alt", widget: "string" }
+      - { label: "Ordine", name: "order", widget: "number", value_type: "int" }
+
+  - name: "steps"
+    label: "Pași"
+    folder: "src/content/steps"
+    format: "yaml"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Număr pas", name: "stepNumber", widget: "number", value_type: "int" }
+      - { label: "Titlu", name: "title", widget: "string" }
+      - { label: "Descriere", name: "description", widget: "text" }
+      - { label: "Ordine", name: "order", widget: "number", value_type: "int" }
+
+  - name: "pricing"
+    label: "Prețuri"
+    folder: "src/content/pricing"
+    format: "yaml"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nume", name: "name", widget: "string" }
+      - { label: "Preț", name: "price", widget: "number", value_type: "int" }
+      - { label: "Monedă", name: "currency", widget: "string", default: "MDL" }
+      - label: "Caracteristici"
+        name: "features"
+        widget: "list"
+        field: { label: "Caracteristică", name: "feature", widget: "string" }
+      - { label: "Text buton", name: "ctaText", widget: "string" }
+      - { label: "Subiect email", name: "ctaEmailSubject", widget: "string" }
+      - { label: "Popular", name: "popular", widget: "boolean", default: false }
+      - { label: "Etichetă popular", name: "popularLabel", widget: "string", required: false }
+      - { label: "Ordine", name: "order", widget: "number", value_type: "int" }
+
+  - name: "reviews"
+    label: "Recenzii"
+    folder: "src/content/reviews"
+    format: "yaml"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Autor", name: "author", widget: "string" }
+      - { label: "Text", name: "text", widget: "text" }
+      - { label: "Rating", name: "rating", widget: "number", value_type: "int", min: 1, max: 5 }
+      - { label: "Ordine", name: "order", widget: "number", value_type: "int" }

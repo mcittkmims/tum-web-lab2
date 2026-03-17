@@ -1,17 +1,46 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Gallery from '../components/Gallery.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Pricing from '../components/Pricing.astro';
+import Reviews from '../components/Reviews.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import Mascot from '../components/Mascot.astro';
+import { getCollection } from 'astro:content';
 
+const siteEntries = await getCollection('site');
+const s = siteEntries[0].data;
+
+const galleryItems = (await getCollection('gallery'))
+  .sort((a, b) => a.data.order - b.data.order)
+  .map(e => e.data);
+
+const stepsItems = (await getCollection('steps'))
+  .sort((a, b) => a.data.order - b.data.order)
+  .map(e => e.data);
+
+const pricingItems = (await getCollection('pricing'))
+  .sort((a, b) => a.data.order - b.data.order)
+  .map(e => e.data);
+
+const reviewItems = (await getCollection('reviews'))
+  .sort((a, b) => a.data.order - b.data.order)
+  .map(e => e.data);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title={`${s.businessName} — Portrete de Cuplu Pictate Manual`}>
+  <Navigation businessName={s.businessName} email={s.contactEmail} />
+  <Hero headline={s.heroHeadline} subheadline={s.heroSubheadline} cta={s.heroCta} email={s.contactEmail} />
+  <About title={s.aboutTitle} paragraphs={s.aboutParagraphs} image={s.aboutImage} imageAlt={s.aboutImageAlt} />
+  <Gallery title={s.galleryTitle} subtitle={s.gallerySubtitle} items={galleryItems} />
+  <HowItWorks title={s.howItWorksTitle} subtitle={s.howItWorksSubtitle} steps={stepsItems} />
+  <Pricing title={s.pricingTitle} subtitle={s.pricingSubtitle} tiers={pricingItems} email={s.contactEmail} />
+  <Reviews title={s.reviewsTitle} subtitle={s.reviewsSubtitle} reviews={reviewItems} />
+  <Contact title={s.contactTitle} text={s.contactText} cta={s.contactCta} email={s.contactEmail} />
+  <Mascot greeting={s.mascotGreeting} text={s.mascotText} ctaText={s.mascotCta} />
+  <Footer businessName={s.businessName} copyright={s.footerCopyright} />
+</BaseLayout>

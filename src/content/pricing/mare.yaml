@@ -1,0 +1,12 @@
+name: "Mare"
+price: 400
+currency: "MDL"
+features:
+  - "Pânză A3"
+  - "1 portret de cuplu"
+  - "Pictat manual cu acrilice"
+  - "Gata în 14–21 zile"
+ctaText: "Comandă mare"
+ctaEmailSubject: "Comandă: Tablou Mare"
+popular: false
+order: 3

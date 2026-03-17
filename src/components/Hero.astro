@@ -1,0 +1,25 @@
+---
+interface Props {
+  headline: string;
+  subheadline: string;
+  cta: string;
+  email: string;
+}
+
+const { headline, subheadline, cta, email } = Astro.props;
+const mailtoHref = `mailto:${email}?subject=Doresc%20s%C4%83%20comand%20un%20tablou`;
+---
+
+<section id="hero" class="relative min-h-screen flex items-center justify-center text-center px-5 lg:px-6 pt-[100px] lg:pt-[120px] pb-16 lg:pb-20">
+  <div class="absolute inset-0 bg-gradient-to-br from-[rgba(250,243,224,0.85)] via-[rgba(213,198,224,0.7)] to-[rgba(242,215,217,0.8)]"></div>
+  <div class="relative z-10 max-w-[680px]">
+    <h1 class="font-heading text-[2.2rem] lg:text-[3.5rem] font-bold leading-tight text-brand-dark mb-5">{headline}</h1>
+    <p class="text-[1rem] lg:text-[1.2rem] font-light text-brand-dark mb-9 leading-[1.7]">{subheadline}</p>
+    <a
+      href={mailtoHref}
+      class="inline-block px-9 py-[14px] rounded-full bg-deep-rose text-white font-bold tracking-wide transition-all duration-300 hover:bg-brand-rose hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(163,88,109,0.35)]"
+    >
+      {cta}
+    </a>
+  </div>
+</section>

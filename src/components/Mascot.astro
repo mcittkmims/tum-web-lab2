@@ -1,0 +1,39 @@
+---
+interface Props {
+  greeting: string;
+  text: string;
+  ctaText: string;
+}
+
+const { greeting, text, ctaText } = Astro.props;
+---
+
+<div class="mascot" id="mascot">
+  <div class="mascot-bubble">
+    <p>{greeting}</p>
+    <p>{text}</p>
+    <a href="#pricing" class="mascot-cta">{ctaText}</a>
+  </div>
+  <svg class="mascot-svg" width="70" height="180" viewBox="0 0 70 180" xmlns="http://www.w3.org/2000/svg" aria-label="Penny mascotul pensonului">
+    <rect x="27" y="76" width="16" height="94" rx="4" fill="#A0714F"/>
+    <rect x="29" y="76" width="4" height="94" rx="2" fill="#C09070" opacity="0.45"/>
+    <rect x="27" y="162" width="16" height="8" rx="4" fill="#8B5E3C"/>
+    <rect x="23" y="61" width="24" height="18" rx="3" fill="#B0B0B0"/>
+    <rect x="23" y="61" width="24" height="5" rx="2" fill="#D4D4D4"/>
+    <line x1="23" y1="68" x2="47" y2="68" stroke="#999" stroke-width="1"/>
+    <path d="M24 62 Q21 38 35 10 Q49 38 46 62 Z" fill="#A3586D"/>
+    <path d="M26 62 Q23 40 35 16 Q35 40 35 62 Z" fill="#B8728A" opacity="0.45"/>
+    <path d="M33 10 Q35 6 37 10" stroke="#D4A0B0" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <circle cx="29" cy="38" r="4.5" fill="white"/>
+    <circle cx="41" cy="38" r="4.5" fill="white"/>
+    <circle cx="30.2" cy="39" r="2.8" fill="#3d2c2e"/>
+    <circle cx="42.2" cy="39" r="2.8" fill="#3d2c2e"/>
+    <circle cx="31" cy="37.5" r="1" fill="white"/>
+    <circle cx="43" cy="37.5" r="1" fill="white"/>
+    <ellipse cx="25" cy="45" rx="4" ry="3" fill="#F2D7D9" opacity="0.8"/>
+    <ellipse cx="45" cy="45" rx="4" ry="3" fill="#F2D7D9" opacity="0.8"/>
+    <path d="M28 48 Q35 55 42 48" stroke="#3d2c2e" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M23 62 Q18 72 21 80" stroke="#A3586D" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <circle cx="21" cy="82" r="4" fill="#A3586D"/>
+  </svg>
+</div>

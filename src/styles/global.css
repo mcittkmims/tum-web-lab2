@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-blush: #f2d7d9;
+  --color-lavender: #d5c6e0;
+  --color-cream: #faf3e0;
+  --color-brand-rose: #c9929d;
+  --color-deep-rose: #a3586d;
+  --color-brand-dark: #3d2c2e;
+  --color-light-bg: #fdf8f4;
+
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+}

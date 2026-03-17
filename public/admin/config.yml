@@ -49,6 +49,7 @@ collections:
     label: "Galerie"
     folder: "src/content/gallery"
     format: "yaml"
+    extension: "yaml"
     create: true
     slug: "{{slug}}"
     fields:
@@ -60,6 +61,7 @@ collections:
     label: "Pași"
     folder: "src/content/steps"
     format: "yaml"
+    extension: "yaml"
     create: true
     slug: "{{slug}}"
     fields:
@@ -72,6 +74,7 @@ collections:
     label: "Prețuri"
     folder: "src/content/pricing"
     format: "yaml"
+    extension: "yaml"
     create: true
     slug: "{{slug}}"
     fields:
@@ -92,6 +95,7 @@ collections:
     label: "Recenzii"
     folder: "src/content/reviews"
     format: "yaml"
+    extension: "yaml"
     create: true
     slug: "{{slug}}"
     fields:

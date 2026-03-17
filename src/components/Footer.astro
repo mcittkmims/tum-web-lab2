@@ -1,0 +1,23 @@
+---
+interface Props {
+  businessName: string;
+  copyright: string;
+}
+
+const { businessName, copyright } = Astro.props;
+---
+
+<footer class="py-10 px-6 bg-brand-dark text-center">
+  <div class="max-w-[800px] mx-auto">
+    <a href="#hero" class="font-heading text-[1.4rem] font-bold text-blush">{businessName}</a>
+    <ul class="flex flex-wrap justify-center gap-x-6 gap-y-4 list-none my-5">
+      <li><a href="#about" class="text-[0.9rem] text-white/70 transition-colors duration-300 hover:text-blush">Despre</a></li>
+      <li><a href="#gallery" class="text-[0.9rem] text-white/70 transition-colors duration-300 hover:text-blush">Galerie</a></li>
+      <li><a href="#how-it-works" class="text-[0.9rem] text-white/70 transition-colors duration-300 hover:text-blush">Cum funcționează</a></li>
+      <li><a href="#pricing" class="text-[0.9rem] text-white/70 transition-colors duration-300 hover:text-blush">Prețuri</a></li>
+      <li><a href="#reviews" class="text-[0.9rem] text-white/70 transition-colors duration-300 hover:text-blush">Recenzii</a></li>
+      <li><a href="#contact" class="text-[0.9rem] text-white/70 transition-colors duration-300 hover:text-blush">Contact</a></li>
+    </ul>
+    <p class="text-[0.8rem] text-white/40 mt-3">{copyright}</p>
+  </div>
+</footer>

@@ -1,0 +1,35 @@
+businessName: "byL&L"
+contactEmail: "lauriana.vremere@gmail.com"
+
+heroHeadline: "Povestea voastră de dragoste, pictată manual"
+heroSubheadline: "Tablouri unicat pictate manual după fotografiile voastre preferate de cuplu. Un cadou atemporal pentru cei pe care îi iubiți."
+heroCta: "Comandă un tablou"
+
+aboutTitle: "Despre mine"
+aboutParagraphs:
+  - "Bună, sunt Lauriana — artista din spatele <strong>byL&L</strong>. Transform fotografiile voastre de cuplu în opere de artă unice, pictate manual. Fiecare pensulă este plină de grijă, surprinzând emoția și legătura care vă face povestea unică."
+  - "Fie că este o surpriză de aniversare, un cadou de nuntă sau pur și simplu o modalitate de a celebra dragostea voastră — ar fi o onoare să creez ceva cu adevărat special pentru voi."
+aboutImage: "images/about.jpg"
+aboutImageAlt: "Lauriana pictând în atelierul ei"
+
+galleryTitle: "Galerie"
+gallerySubtitle: "O selecție de portrete de cuplu pictate manual"
+
+howItWorksTitle: "Cum funcționează"
+howItWorksSubtitle: "De la fotografie la capodoperă în 3 pași simpli"
+
+pricingTitle: "Prețuri"
+pricingSubtitle: "Alege dimensiunea perfectă pentru tabloul tău"
+
+reviewsTitle: "Ce spun clienții"
+reviewsSubtitle: "Reacții reale de la oameni care au comandat un tablou"
+
+contactTitle: "Să creăm ceva frumos împreună"
+contactText: "Ești gata să transformi fotografia ta preferată într-un tablou pictat manual? Scrie-mi un email și să începem!"
+contactCta: "Contactează-mă"
+
+footerCopyright: "© 2026 byL&L. Toate drepturile rezervate."
+
+mascotGreeting: "Bună! Sunt Penny 🎨"
+mascotText: "Transformăm povestea voastră de dragoste într-un tablou unic pictat manual!"
+mascotCta: "Vezi prețuri"
